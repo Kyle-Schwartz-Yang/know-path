@@ -1,0 +1,37 @@
+.tab {
+
+  &__buttons {
+    @include flexbox(flex, null, center, row, nowrap, 2rem);
+
+    &:not(:last-child) {
+      margin: 0px 0px 3rem 0px;
+    }
+
+    @media (max-width: 768px) {
+      @include flexbox(flex, null, flex-start, column, nowrap, 2rem);
+    }
+
+  }
+
+  &__search {
+    width: 100%;
+
+    @media (max-width: 479px) {
+      & .search-default {
+        width: 100%;
+        justify-content: flex-start
+      }
+    }
+
+  }
+
+  &__contents {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(35rem, 1fr));
+    gap: 2rem;
+
+    @media (max-width: 479px) {
+      grid-template-columns: repeat(auto-fill, minmax(29rem, 1fr));
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.buttons-filter {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(auto, 1fr));
+  gap: 1.5rem;
+
+  @media (max-width: 479px) {
+    width: 100%;
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  & button {
+    padding: 1rem 1.5rem;
+    font-size: 2rem;
+    color: #fff;
+    border: 1px solid var(--color-white);
+
+    &._active {
+      background-color: var(--secondary-color);
+    }
+  }
+
+}

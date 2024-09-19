@@ -1,0 +1,14 @@
+include ./_header-default.pug
+
+
+//- mixins.pug
+mixin Header(options = {type: 'primary'})
+    if options.type === 'secondary'
+      include ./_header-secondary.pug
+    else if options.type === 'primary'
+      include ./_header-primary.pug
+    else 
+      +header-default()
+
+
+

@@ -1,0 +1,85 @@
+
+mixin Dropdown(data)
+  -
+
+
+    const options = {
+      className: 'menu',
+      contentItems : [
+        {
+          text: 'Home',  
+          image: `<i class="bi bi-house-fill"></i>` 
+        }, 
+        {
+        text: 'Sections', 
+        image: '<i class="bi bi-search"></i>',
+        dropdown: [
+        { to: "/category2", text: "Tabsing" },
+        { to: "/category3", text: "Caruseling" }
+        ]
+        },
+        {
+          text: 'Help', 
+          image: '<i class="bi bi-question-circle"></i>', 
+          modalTarget : 'info-modal', 
+          closeMenuOnClick : 'data-close-menu', 
+          classNamed: 'modals-buttons-group' 
+        },
+        {
+          text: 'Sing in', 
+          image: '<i class="bi bi-person-circle"></i>', 
+          modalTarget : 'signin-modal', 
+          closeMenuOnClick : 'data-close-menu',
+          classNamed: 'modals-buttons-group'
+        },
+      ],
+    }
+    const { contentItems } = Object.assign({}, options, data)
+  -
+
+  nav.nav
+    .nav__container
+      .nav__menu(id='nav-menu')
+      ul.nav__list 
+        li.nav__item 
+          a.nav__link(href="#") Первый уровень
+        //-!------------------DROPDOWN 1------------------
+        li.dropdown__item
+          .nav__link.dropdown__link
+            span dropdown lvl-1
+            <i class="bi bi-caret-down-fill dropdown__arrow"></i>
+          //- DROPDOWN MENU
+          ul.dropdown__menu 
+            - for (var x = 0; x < 2; x++)
+              li
+                a.nav__link(href="#") Второй уровень
+            //-*------------------DROPDOWN-SUB 1------------------
+            li.dropdown__sub-item 
+              div.nav__link.dropdown__link 
+                span dropdown lvl-2
+                <i class="bi bi-caret-down-fill dropdown__arrow"></i>              
+              ul.dropdown__sub-menu 
+                - for (var x = 0; x < 2; x++)
+                  li
+                    a.nav__link(href="#") Третий уровень
+            //-*------------------DROPDOWN-SUB 1------------------
+            - for (var x = 0; x < 2; x++)
+              li
+                a.nav__link(href="#") Второй уровень
+        //-!------------------DROPDOWN 1------------------
+        li.nav__item 
+          a.nav__link(href="#") Первый уровень 
+
+        //-!------------------DROPDOWN 2------------------
+        li.dropdown__item
+          .nav__link.dropdown__link 
+            span dropdown lvl-1
+            <i class="bi bi-caret-down-fill dropdown__arrow"></i>
+          ul.dropdown__menu 
+            - for (var x = 0; x < 4; x++)
+              li
+                a.nav__link(href="#") element drop 2
+        //-!------------------DROPDOWN 2------------------
+
+
+

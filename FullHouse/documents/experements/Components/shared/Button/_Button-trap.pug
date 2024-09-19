@@ -1,0 +1,23 @@
+//- ! -------------------------------------------------------------------------Bootstrap 
+
+mixin Button-trap(props={})
+  -
+    const { 
+      type = 'button',
+      variant = 'primary',
+      size = 'md',
+      disabled = false,
+      onClick = null,
+      className = '',
+      children = 'Button'
+    } = props;
+
+  button(
+    type=type,
+    class=`btn btn-${variant} btn-${size} ${disabled ? 'disabled' : ''} ${className}`,
+    disabled=disabled,
+    onClick=onClick
+  )= children
+
+
+

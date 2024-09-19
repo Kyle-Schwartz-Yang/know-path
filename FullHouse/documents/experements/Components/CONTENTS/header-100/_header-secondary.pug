@@ -1,0 +1,10 @@
+//- header.header-secondary 
+//-   .header-secondary__container 
+//-     h1.header-secondary__title secondary header
+
+- const headerName = 'secondary'
+
+header(class=`header-${headerName}`)
+  .header__container(class=`header-${headerName}__container`)
+    h1.header__title(class=`header-${headerName}__title`) #{headerName} header
+

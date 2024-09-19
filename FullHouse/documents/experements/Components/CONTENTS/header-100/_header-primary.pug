@@ -1,0 +1,15 @@
+//- header.header-primary 
+//-   .header-primary__container 
+//-     h1.header-primary__title primary header
+
+
+
+mixin header-primary()
+  - const headerNamed = 'header-default'
+  - const menuNamed = 'menu-default'
+  - const menuItem = ['UI Design', 'Style Guide', 'Website Design', 'Carousel']
+
+  header(class=`header-${headerNamed}`)
+  .header__container(class=`header-${headerNamed}__container`)
+    h1.header__title(class=`header-${headerNamed}__title`) #{headerNamed} header
+

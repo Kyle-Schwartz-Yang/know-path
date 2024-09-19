@@ -1,0 +1,45 @@
+
+
+include ../../_elements/CardGame/_CardGame.pug
+
+
+
+mixin Random-purchase()
+  -
+    const randomContent = [
+      { 
+        title: 'One Card Checked', 
+        txt: 'Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.',
+        image: `${assetsPath}/images/horror-card1.jpg`,
+        newPrice: '97 $',
+        oldPrice: '295 $',
+        likes: '233',
+      },
+      { 
+        title: 'Second Card Chcked', 
+        txt: 'Sent to find a missing billionaire on a remote island, you find yourself in a cannibal-infested hellscape. Craft, build, and struggle to survive, alone or with friends, in this terrifying new open-world survival horror simulator.222',
+        image: `${assetsPath}/images/horror-card1.jpg`,
+        newPrice: '97 $',
+        oldPrice: '295 $',
+        likes: '233',
+      },
+      // Добавьте здесь другие объекты для разнообразия
+    ]
+  
+    let currentIndex = Math.floor(Math.random() * randomContent.length)
+    let currentItem = randomContent[currentIndex]
+    let gamesArray = Array.isArray(currentItem) ? currentItem : [currentItem];
+
+  -
+  +Sections('Purchase')('random-purchase')
+    .random-purchase__container
+      .random-purchase__auction
+        .random-purchase__item
+          +CardGame('', gamesArray)
+      .random-purchase__body 
+        button.random-purchase__change-card() change
+
+
+
+
+

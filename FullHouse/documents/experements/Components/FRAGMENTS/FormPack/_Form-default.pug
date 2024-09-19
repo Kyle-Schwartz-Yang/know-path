@@ -1,0 +1,43 @@
+
+
+
+mixin Form-default()
+  .form 
+    form.form__body#form(action = '#')
+      h1.form__title Отправка данных на почту
+      .form__item 
+        label.form__label(for='formName') Имя*:
+        input.form__input(type="text", name='name' class='_req' placeholder='Введите ваше имя:')#forName
+      .form__item 
+        label.form__label(for='formEmail') Email*:
+        input.form__input(type="text", name='email' class='_req _email' placeholder='Введите ваш email')#formEmail
+      .form__item 
+        .form__label Man of Woman ? 
+        .options
+          .options__item 
+            input#formGenderMan(type="radio", name='gender', value='Man', checked).options__input.hidden
+            label(for='formGenderMan').options__label <span>Man</span>
+          .options__item 
+            input#formGenderWoman(type="radio", name='gender' value='Woman').options__input.hidden
+            label(for='formGenderWoman').options__label <span>Woman</span>
+      .form__item 
+        label.form__label(for='formMessage') Сообщение:
+        textarea.form__input(name="message" id='forMessage' placeholder='Сообщение...' class='_req')
+      .form__item 
+        .form__label Укажите возраст: 
+        select(name="age").form__select
+          option(value="18-25" selected) <span>18 - 25</span>
+          option(value="25-45") <span>25 - 45 </span>
+          option(value="45-99") <span>45 - 99 </span>
+      .form__item 
+        .form__label Прикрепить фото: 
+        .file 
+          .file__item
+            input#formImage(type="file" name='image' accept='.jpg, .png, .gif, .txt').file__input
+            button.file__button.button-global Add file
+          .file__preview#formPreview File Photo
+      .form__item 
+        .checkbox
+          input(type="checkbox" name='agreement' id='formAgreement').checkbox__input._req
+          label(for="formAgreement").checkbox__label <span> Я даю свое согласие на обработку персональных данных в соответствиии с <a href ='#'>Условиями</a> </span>
+      button(type="submit").form__submit.button-global Submit
