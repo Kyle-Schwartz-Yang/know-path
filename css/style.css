@@ -585,7 +585,7 @@ html {
 body {
   background-color: var(--color-white);
   background-color: #1e1f35;
-  color: var(--color-black);
+  color: var(--color-white);
   font-family: "Helvetica Cyrillic", sans-serif;
   font-size: 1.6rem;
 }
@@ -612,6 +612,10 @@ body {
   -webkit-box-flex: 1;
       -ms-flex: 1 0 auto;
           flex: 1 0 auto;
+}
+
+.block-content p:not(:last-child) {
+  margin-bottom: 2rem;
 }
 
 .menu._active .menu__cover {
@@ -859,6 +863,7 @@ body {
   left: 0;
   top: 0;
   width: 100%;
+  color: var(--color-black);
   padding: 2rem 0rem;
   background-color: var(--color-black);
 }

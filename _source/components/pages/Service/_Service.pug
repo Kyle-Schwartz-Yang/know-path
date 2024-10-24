@@ -4,17 +4,13 @@ extends ../../app/pug/_loyaout.pug
 //- ----------------------------Наследственность
 
 //-! -------------------------------------- PART
-//- include ../../shared/components/Accordion/_Accordion.pug
-
-include ../../shared/ui/common/ChangeButton/_ChangeButton.pug
-
 //-! -------------------------------------- PART
 
 //-* -------------------------------------HEAD
 block settings
   -
     var settings = {
-      title: 'Sandbox',
+      title: 'serivice',
       lang: 'uk',
     }
   -
@@ -30,14 +26,9 @@ block content
   main.main 
     section.hero
       .hero__container
-        h1.hero__title.title Home page
+        h1.hero__title.title Service page
         .block-content
           p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sequi corrupti veritatis illo enim harum necessitatibus obcaecati iure, iste, beatae, odio aliquid dolorum? Optio ipsa distinctio, iure quae accusamus fuga?
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sequi corrupti veritatis illo enim harum necessitatibus obcaecati iure, iste, beatae, odio aliquid dolorum? Optio ipsa distinctio, iure quae accusamus fuga?
-          p Lorem ipsum dolor sit amet consectetur adipisicing elit. Quis sequi corrupti veritatis illo enim harum necessitatibus obcaecati iure, iste, beatae, odio aliquid dolorum? Optio ipsa distinctio, iure quae accusamus fuga?
-
-
-
 
 block scripts
   script(type="module", src=`./script/app.js`)

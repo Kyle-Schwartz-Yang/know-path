@@ -12,7 +12,7 @@ html {
 body {
   background-color: var(--color-white);
   background-color: #1e1f35;
-  color: var(--color-black);
+  color: var(--color-white);
   font-family: $font-face;
   font-size: $f-size-default;
 }
@@ -34,3 +34,11 @@ body {
   // min-height: 100vh; //? [Fix Scrollbar MultiPage] ?\\
 }
 
+
+
+.block-content {
+
+  & p:not(:last-child){
+    margin-bottom: 2rem;
+  }
+}
